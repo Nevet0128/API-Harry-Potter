@@ -1,0 +1,57 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body{
+  background-color: #525050;
+}
+
+#table__characters{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 15px;
+}
+
+.character__name{
+  
+}
+
+.character__alias{
+  color: black;
+  font-style: italic;
+
+}
+.character__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  width: 15%;
+  border-radius: 10%;
+}
+
+.Gryffindor{
+background-color: #a6332e;
+}
+
+.Hufflepuff{
+background-color: #efbc2f;
+}
+    
+.Ravenclaw{
+  background-color: #ec4e91;
+}
+    
+.Slytherin{
+  background-color: #366447;
+}
+
+.character__img{
+  width: 100px;
+}
