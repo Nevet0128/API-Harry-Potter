@@ -24,8 +24,7 @@ Para la elaboración de la ficha puede hacer uso de bootstrap, materialize o cua
 
 4. Colocar un botón para que despliegue más información detallada del pokémon (puede ser en un modal o una nueva página).
 
-5. Colocar un botón para añadir el pokemon a una tabla, si el usuario así lo desea, se generará una fila dinámicamente por cada criatura añadida (Un máximo de 6).  Sí el pokémon que se desea añadir ya existe en la
-Sí el pokémon que se desea añadir ya existe en la tabla, éste  no se insertará.
+5. Colocar un botón para añadir el pokemon a una tabla, si el usuario así lo desea, se generará una fila dinámicamente por cada criatura añadida (Un máximo de 6). Sí el pokémon que se desea añadir ya existe en la tabla, éste  no se insertará.
 
 
 {

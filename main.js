@@ -7,11 +7,9 @@ const URL = "https://hp-api.onrender.com/api/characters",
   $Ravenclaw = document.getElementById("Ravenclaw"),
   $Slytherin = document.getElementById("Slytherin");
 
-let characterList = ''
+let characterList = '';
 
-//console.log(res)
 const data = await res.json()
-//console.log(data)
   
 data.forEach(character => {
   characterList += `
@@ -20,7 +18,8 @@ data.forEach(character => {
       <p class="character__alias"><b>${character.alternate_names[0] ? character.alternate_names[0] : 'no alternative name'}</b></p>
       <img src="${character.image
       ? character.image
-      : 'https://media.istockphoto.com/id/515930993/es/vector/hombre-con-cabeza-y-hombros-silueta-vector-excalmation-marca.jpg?s=2048x2048&w=is&k=20&c=LUD97wROC8BOFuSiC3hGVFeqRrFrEBg_WijmEnyplOQ=' }" alt="image of ${character.name}" class="character__img">
+      : './assets/nophoto.jpg'}" alt="image of ${character.name}" class="character__img">
+      <div class="character__house">${character.house}</div>
     </div>
   `
 })
@@ -28,24 +27,68 @@ data.forEach(character => {
 $charactersTable.innerHTML = characterList;
 
 
+let $charactersName = document.querySelectorAll(".character__name"),
+  $characterHouse = document.querySelectorAll(".character__house"),
+  regExp,
+  regExpHouse,
+  searchbarContent;
 
-window.addEventListener("keypress", e => {
+window.addEventListener("input", e => {
   if (e.target == $searchBar) {
-    let search = `\${$searchBar.value\}`;
-    //Loop de todas las cartas si no coindice el nombre, poner una clase para ocultarlo con css
-    $searchBar.value += e.key;
+    searchbarContent = $searchBar.value;
+    regExp = new RegExp(`${searchbarContent}`, "gi");
   }
+
+  $charactersName.forEach((el) => {
+        if (!regExp.test(el.textContent))
+          el.parentElement.style.setProperty("display", "none");
+        else el.parentElement.style.setProperty("display", "flex");
+      });
 })
 
 window.addEventListener("click", e => {
   if (e.target == $Gryffindor) {
     //si no coincide con Gryffindor en character.casa, ocultar las demás casas
+    searchbarContent = $searchBar.value;
+    regExpHouse = new RegExp("Gryffindor", "gi");
+
+  $characterHouse.forEach((el) => {
+        if (!regExpHouse.test(el.textContent))
+          el.parentElement.style.setProperty("display", "none");
+        else el.parentElement.style.setProperty("display", "flex");
+  });
   } else if (e.target == $Hufflepuff) {
     //si no coincide con Hufflepuff en character.casa, ocultar las demás casas
+    
+    searchbarContent = $searchBar.value;
+    regExpHouse = new RegExp("Hufflepuff", "gi");
+
+  $characterHouse.forEach((el) => {
+        if (!regExpHouse.test(el.textContent))
+          el.parentElement.style.setProperty("display", "none");
+        else el.parentElement.style.setProperty("display", "flex");
+  });
   } else if (e.target == $Ravenclaw) {
     //si no coincide con Ravenclaw en character.casa, ocultar las demás casas
+    
+    searchbarContent = $searchBar.value;
+    regExpHouse = new RegExp("Ravenclaw", "gi");
+
+  $characterHouse.forEach((el) => {
+        if (!regExpHouse.test(el.textContent))
+          el.parentElement.style.setProperty("display", "none");
+        else el.parentElement.style.setProperty("display", "flex");
+  });
   } else if (e.target == $Slytherin) {
     //si no coincide con Slytherin en character.casa, ocultar las demás casas
+    searchbarContent = $searchBar.value;
+    regExpHouse = new RegExp("Slytherin", "gi");
+
+  $characterHouse.forEach((el) => {
+        if (!regExpHouse.test(el.textContent))
+          el.parentElement.style.setProperty("display", "none");
+        else el.parentElement.style.setProperty("display", "flex");
+  });
   }
 })
 
