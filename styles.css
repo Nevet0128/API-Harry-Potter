@@ -9,6 +9,23 @@ body{
   background-color: #525050;
 }
 
+span{
+  color: white;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+}
+
+.header__button{
+  padding: 5px;
+  font-size: medium;
+}
+
 #table__characters{
   display: flex;
   flex-direction: row;
@@ -18,7 +35,7 @@ body{
 }
 
 .character__name{
-  
+  color: black;
 }
 
 .character__alias{
@@ -34,6 +51,14 @@ body{
   border: 2px solid black;
   width: 15%;
   border-radius: 10%;
+  gap: 15px;
+}
+
+.character__img{
+  height: 150px;
+  width: auto;
+
+  border-radius: 50%;
 }
 
 .Gryffindor{

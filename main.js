@@ -5,7 +5,8 @@ const URL = "https://hp-api.onrender.com/api/characters",
   $Gryffindor = document.getElementById("Gryffindor"),
   $Hufflepuff = document.getElementById("Hufflepuff"),
   $Ravenclaw = document.getElementById("Ravenclaw"),
-  $Slytherin = document.getElementById("Slytherin");
+  $Slytherin = document.getElementById("Slytherin"),
+  $Reset = document.getElementById("Reset");
 
 let characterList = '';
 
@@ -88,6 +89,12 @@ window.addEventListener("click", e => {
         if (!regExpHouse.test(el.textContent))
           el.parentElement.style.setProperty("display", "none");
         else el.parentElement.style.setProperty("display", "flex");
+  });
+  }else if (e.target == $Reset) {
+    //Mostar todas las cartas
+
+  $characterHouse.forEach((el) => {
+        el.parentElement.style.setProperty("display", "flex");
   });
   }
 })
